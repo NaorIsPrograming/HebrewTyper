@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace HebrewTyper
@@ -186,6 +187,17 @@ namespace HebrewTyper
             return count;
 
         }
+        private int CalculateAcuracy()
+        {
+            int counter = 0;
+            for(int i=0; i<currentIndex; i++)
+            {
+                TextToType.Select(i, 1);
+                if (TextToType.SelectionBackColor == Color.Red)
+                    counter++;
+            }
+            return (int)(counter / (currentIndex+1.0)) * 100;
+        }
 
         private void Typer_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -214,5 +226,9 @@ namespace HebrewTyper
             return avg;
             
         }
+        private int CurrentWpm()//uses methoud of calculation as discussed with ido- total chars/
+        { 
+        }
+      
     }
 }
