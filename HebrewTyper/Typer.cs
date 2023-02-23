@@ -53,12 +53,12 @@ namespace HebrewTyper
                         
                     else// if the space was placed incorrectly skip to the first letter of the first word and error out everything.
                     {
-                        TextToType.Select(currentIndex, findIndexOfNextLetter(currentIndex) - currentIndex);
+                        TextToType.Select(currentIndex,1);
                         TextToType.SelectionColor = Color.Red;
                         TextToType.SelectionBackColor = Color.LightSalmon;
-                        currentIndex=findIndexOfNextLetter(currentIndex)+1;
+                        currentIndex++;
                         backColorCurrentLetter(currentIndex);
-                        TypedText.Text = "";
+                        
                     }
                 }
                 else// this adresses all of the situations where the user typed a letter
@@ -227,7 +227,8 @@ namespace HebrewTyper
             
         }
         private int CurrentWpm()//uses methoud of calculation as discussed with ido- total chars/
-        { 
+        {
+            return 2;// placeholder thing
         }
       
     }
