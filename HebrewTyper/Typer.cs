@@ -149,7 +149,7 @@ namespace HebrewTyper
 
         private void TypedText_KeyDown(object sender, KeyEventArgs e)// this method addresses what happens when the user presses backspace
         {
-            if (TypedText.Text == "" || TypedText.Text == null || currentIndex==0)
+            if (TypedText.Text == null || currentIndex==0)
                 return;
             if (e.KeyCode == Keys.Back)
             {
@@ -158,9 +158,12 @@ namespace HebrewTyper
                 removePaint(currentIndex);
                 backColorCurrentLetter(currentIndex);
                 
-                
-                preventEvent= true;// bool to close up the inevitable TypedText_TextChanged event that will be triggered after this event
+                if(TypedText.Text!="")
+                {
+                    preventEvent = true;// bool to close up the inevitable TypedText_TextChanged event that will be triggered after this event
+                }
             }
+                
                 
 
         }
