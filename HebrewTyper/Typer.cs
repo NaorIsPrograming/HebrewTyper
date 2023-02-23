@@ -38,7 +38,7 @@ namespace HebrewTyper
                 preventEvent= false;
                 return;
             }// this is written in to prevent the event from triggering after backspace was used
-            if(TypedText.Text.Length > 0&&currentIndex<TextToType.Text.Length) // this main if is where the magic happens and the coloring of the richTextBox ThingsToType Occurs
+            if(TypedText.Text.Length > 0&&currentIndex<TextToType.Text.Length) // this is where the magic happens and the coloring of the richTextBox ThingsToType Occurs
             {
                 removeBackColor(currentIndex);
                 
@@ -227,7 +227,9 @@ namespace HebrewTyper
             
         }
         private int CurrentWpm()//uses methoud of calculation as discussed with ido- total chars/
-        { 
+        {
+            return 2;//placeholder thing
+
         }
       
     }
